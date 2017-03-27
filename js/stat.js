@@ -14,8 +14,8 @@ window.renderStatistics = function (ctx, names, times) {
   for (var i = 0; i < times.length; i++) {
     var time = times[i];
     if (time > max) {
-    max = time;
-  }
+      max = time;
+    }
   }
   var histogramHeight = 150;
   var step = histogramHeight / (max - 0);
@@ -34,10 +34,10 @@ window.renderStatistics = function (ctx, names, times) {
       var maximum = 1;
       var randomNumber = Math.random() * (maximum - minimum) + minimum;
       if (names[i] === 'Вы') {
-      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-    } else {
-      ctx.fillStyle = 'rgba(17, 9, 255, ' + randomNumber + ' )';
-    }
+        ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+      } else {
+        ctx.fillStyle = 'rgba(17, 9, 255, ' + randomNumber + ' )';
+      }
     };
     colorNames();
     ctx.fillRect((barWidth + indent) * i, initialYHistogram, barWidth, times[i] * step);
