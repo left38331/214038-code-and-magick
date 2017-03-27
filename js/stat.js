@@ -13,7 +13,7 @@ window.renderStatistics = function (ctx, names, times) {
   var max = -1;
   for (var i = 0; i < times.length; i++) {
     var time = times[i];
-  if (time > max) {
+    if (time > max) {
     max = time;
   }
   }
@@ -21,31 +21,31 @@ window.renderStatistics = function (ctx, names, times) {
   var step = histogramHeight / (max - 0);
   ctx.save();
   ctx.translate(460, 240);
-  ctx.rotate(180 * Math.PI/180);
+  ctx.rotate(180 * Math.PI / 180);
   var barWidth = 40;
   var indent = 50;
   var initialX = 0;
   var initialY = 275;
   var initialYHistogram = -20;
   var initialYTimes = 100;
-  for ( i = 0; i < times.length; i++) {
+  for (i = 0; i < times.length; i++) {
     var colorNames = function () {
-  var minimum = 0.1;
-  var maximum = 1;
-  var randomNumber = Math.random() * (maximum - minimum) + minimum;
-    if (names[i] === 'Вы') {
-    ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-  } else {
-    ctx.fillStyle = 'rgba(17, 9, 255, ' + randomNumber + ' )';
-  }
-  };
+      var minimum = 0.1;
+      var maximum = 1;
+      var randomNumber = Math.random() * (maximum - minimum) + minimum;
+      if (names[i] === 'Вы') {
+      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+    } else {
+      ctx.fillStyle = 'rgba(17, 9, 255, ' + randomNumber + ' )';
+    }
+    };
     colorNames();
     ctx.fillRect((barWidth + indent) * i, initialYHistogram, barWidth, times[i] * step);
   }
   ctx.restore();
   ctx.save();
   ctx.translate(420, 0);
-  for (var i = 0; i < times.length; i++) {
+  for (i = 0; i < times.length; i++) {
     ctx.fillText(names[i], initialX - (barWidth + indent) * i, initialY);
     ctx.fillText(Math.round(times[i]), initialX - (barWidth + indent) * i, initialYTimes);
   }
