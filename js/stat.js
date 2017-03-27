@@ -28,14 +28,11 @@ window.renderStatistics = function (ctx, names, times) {
   var initialY = 275;
   var initialYHistogram = -20;
   var initialYTimes = 100;
-  for (var i = 0; i < times.length; i++) {
+  for ( i = 0; i < times.length; i++) {
     var colorNames = function () {
-    var randomNumber = Math.random();
-    function getRandomArbitary(minim, maxim) {
-  var minim = 0.1;
-  var maxim = 1;
-  return Math.random() * (maxim - minim) + minim;
-}
+  var minimum = 0.1;
+  var maximum = 1;
+  var randomNumber = Math.random() * (maximum - minimum) + minimum;
     if (names[i] === 'Вы') {
     ctx.fillStyle = 'rgba(255, 0, 0, 1)';
   } else {
