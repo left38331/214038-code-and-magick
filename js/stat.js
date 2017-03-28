@@ -7,7 +7,7 @@ window.renderStatistics = function (ctx, names, times) {
   ctx.strokeRect(100, 10, 420, 270);
   ctx.fillRect(100, 10, 420, 270);
   ctx.fillStyle = '#000';
-  ctx.font = '14px PT Mono';
+  ctx.font = '16px PT Mono';
   ctx.fillText('Ура вы победили!', 120, 40);
   ctx.fillText('Список результатов:', 120, 60);
   var max = -1;
@@ -29,17 +29,14 @@ window.renderStatistics = function (ctx, names, times) {
   var initialYHistogram = -20;
   var initialYTimes = 100;
   for (i = 0; i < times.length; i++) {
-    var colorNames = function () {
-      var minimum = 0.1;
-      var maximum = 1;
-      var randomNumber = Math.random() * (maximum - minimum) + minimum;
-      if (names[i] === 'Вы') {
-        ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-      } else {
-        ctx.fillStyle = 'rgba(17, 9, 255, ' + randomNumber + ' )';
-      }
-    };
-    colorNames();
+    var minimum = 0.1;
+    var maximum = 1;
+    var randomNumber = Math.random() * (maximum - minimum) + minimum;
+    if (names[i] === 'Вы') {
+      ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+    } else {
+      ctx.fillStyle = 'rgba(17, 9, 255, ' + randomNumber + ' )';
+    }
     ctx.fillRect((barWidth + indent) * i, initialYHistogram, barWidth, times[i] * step);
   }
   ctx.restore();
