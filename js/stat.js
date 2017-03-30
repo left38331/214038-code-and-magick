@@ -3,12 +3,12 @@
 window.renderStatistics = function (ctx, names, times) {
   var i;
   var max = 0;
-  var maxTimeFunction = function () {   //функция записи времени и выбора макс времени
+  var maxTimeFunction = function () {   // функция записи времени и выбора макс времени
     if (times[i] > max) {
       max = times[i];
     }
   };
-  var colorNames = function () {  //функция выбора цвета
+  var colorNames = function () {  // функция выбора цвета
     var minimum = 0.1;
     var maximum = 1;
     var randomNumber = Math.random() * (maximum - minimum) + minimum;
@@ -32,15 +32,15 @@ window.renderStatistics = function (ctx, names, times) {
   var indent = 50;
   var initialXHistogram = 150;
   var initialY = 275;
-  for (i = 0; i < times.length; i++) {       //нахождение максимального времени
+  for (i = 0; i < times.length; i++) {       // нахождение максимального времени
     maxTimeFunction();
   }
-  var step = histogramHeight / (max);        //определение шага
+  var step = histogramHeight / (max);        // определение шага
   for (i = 0; i < times.length; i++) {
     colorNames();
-    ctx.fillRect((initialXHistogram + (barWidth + indent) * i), (260 - (times[i] * step)), barWidth, times[i] * step); //отрисовка гистограммы
+    ctx.fillRect((initialXHistogram + (barWidth + indent) * i), (260 - (times[i] * step)), barWidth, times[i] * step); // отрисовка гистограммы
     ctx.fillStyle = 'black';
-    ctx.fillText(names[i], (initialXHistogram + (barWidth + indent) * i), initialY);  //вывод имени
-    ctx.fillText(Math.round(times[i]), (initialXHistogram + (barWidth + indent) * i), 250 - (times[i] * step));  //вывод времени
+    ctx.fillText(names[i], (initialXHistogram + (barWidth + indent) * i), initialY);  // вывод имени
+    ctx.fillText(Math.round(times[i]), (initialXHistogram + (barWidth + indent) * i), 250 - (times[i] * step));  // вывод времени
   }
 };
