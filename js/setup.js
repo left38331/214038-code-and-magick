@@ -25,24 +25,24 @@ var randomFuncOptic = function () {
   var selectedColorOptic = colorOptic[randomColorOptic];
   return selectedColorOptic;
 };
-var randomArray = [
+var randomArr = [
   {name: randomFuncName(), coatColor: randomFuncColor(), eyesColor: randomFuncOptic()},
   {name: randomFuncName(), coatColor: randomFuncColor(), eyesColor: randomFuncOptic()},
   {name: randomFuncName(), coatColor: randomFuncColor(), eyesColor: randomFuncOptic()},
   {name: randomFuncName(), coatColor: randomFuncColor(), eyesColor: randomFuncOptic()}
 ];
-var renderWizard = function (randomArray) {
+var renderWizard = function (randomArr) {
   var wizardElement = similarVizardTemplate.cloneNode(true);
-  wizardElement.querySelector('.setup-similar-label').textContent = randomArray.name;
-  wizardElement.querySelector('.wizard-coat').style.fill = randomArray.coatColor;
-  wizardElement.querySelector('.wizard-eyes').style.fill = randomArray.eyesColor;
+  wizardElement.querySelector('.setup-similar-label').textContent = randomArr.name;
+  wizardElement.querySelector('.wizard-coat').style.fill = randomArr.coatColor;
+  wizardElement.querySelector('.wizard-eyes').style.fill = randomArr.eyesColor;
   return wizardElement;
 };
 var createFunc = function () {
   var i;
   var fragment = document.createDocumentFragment();
-  for (i = 0; i < randomArray.length; i++) {
-    fragment.appendChild(renderWizard(randomArray[i]));
+  for (i = 0; i < randomArr.length; i++) {
+    fragment.appendChild(renderWizard(randomArr[i]));
   }
   similarListElement.appendChild(fragment);
 };
