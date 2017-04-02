@@ -31,11 +31,11 @@ var randomArr = [
   {name: randomFuncName(), coatColor: randomFuncColor(), eyesColor: randomFuncOptic()},
   {name: randomFuncName(), coatColor: randomFuncColor(), eyesColor: randomFuncOptic()}
 ];
-var renderWizard = function (randomArr) {
+var renderWizard = function (wizard) {
   var wizardElement = similarVizardTemplate.cloneNode(true);
-  wizardElement.querySelector('.setup-similar-label').textContent = randomArr.name;
-  wizardElement.querySelector('.wizard-coat').style.fill = randomArr.coatColor;
-  wizardElement.querySelector('.wizard-eyes').style.fill = randomArr.eyesColor;
+  wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
+  wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
+  wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
   return wizardElement;
 };
 var createFunc = function () {
