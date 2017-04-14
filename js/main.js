@@ -1,5 +1,5 @@
 'use strict';
 
-isCreateHeroes();
-isClickOrPressKey();
-isClickOnVizard();
+window.isCreateHeroes();
+window.isClickOrPressKey();
+window.isClickOnVizard();

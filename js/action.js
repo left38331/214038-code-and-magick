@@ -25,12 +25,12 @@ window.isClickOrPressKey = (function () {
     closePopup();
   });
   setupOpen.addEventListener('keydown', function (evt) {
-    if (isActivationEvent(evt)) {
+    if (window.isActivationEvent(evt)) {
       openPopup();
     }
   });
   setupClose.addEventListener('keydown', function (evt) {
-    if (isActivationEvent(evt)) {
+    if (window.isActivationEvent(evt)) {
       closePopup();
     }
   });
