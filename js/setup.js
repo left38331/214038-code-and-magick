@@ -25,6 +25,21 @@ window.isCreateHeroes = (function () {
     var selectedColorOptic = colorOptic[randomColorOptic];
     return selectedColorOptic;
   };
+  var wizardCoatColors = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
+  var wizardEyesColors = ['black', 'red', 'blue', 'yellow', 'grenn'];
+  var wizardFireballColors = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
+  var getRandomColorFromSet = function (set) {
+    var randomEleventIndex = Math.floor(Math.random() * set.length - 1);
+    return set[randomEleventIndex];
+  };
+  var getRandomColorFromSetEye = function (setEyes) {
+    var randomEleventIndex = Math.floor(Math.random() * setEyes.length - 1);
+    return setEyes[randomEleventIndex];
+  };
+  var getRandomColorFromSetFireball = function (setFireball) {
+    var randomEleventIndex = Math.floor(Math.random() * setFireball.length - 1);
+    return setFireball[randomEleventIndex];
+  };
   var randomArr = [
     {name: randomFuncName(), coatColor: randomFuncColor(), eyesColor: randomFuncOptic()},
     {name: randomFuncName(), coatColor: randomFuncColor(), eyesColor: randomFuncOptic()},
@@ -46,4 +61,12 @@ window.isCreateHeroes = (function () {
     similarListElement.appendChild(fragment);
   };
   createFunc();
-});
+  return {
+    arrayColorCoat: wizardCoatColors,
+    arrayColorEye: wizardEyesColors,
+    arrayColorFireball: wizardFireballColors,
+    coatColor: getRandomColorFromSet,
+    eyeColor: getRandomColorFromSetEye,
+    fireballColor: getRandomColorFromSetFireball
+  }
+})();
