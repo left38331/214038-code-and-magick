@@ -68,5 +68,5 @@ window.isCreateHeroes = (function () {
     coatColor: getRandomColorFromSet,
     eyeColor: getRandomColorFromSetEye,
     fireballColor: getRandomColorFromSetFireball
-  }
+  };
 })();
