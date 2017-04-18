@@ -31,7 +31,6 @@
     document.addEventListener('mouseup', onMouseUp);
   });
   var shopElement = document.querySelector('.setup-artifacts-shop');
-  var allCell = document.querySelectorAll('.setup-artifacts-cell');
   var artifactsElement = document.querySelector('.setup-artifacts');
   var draggedItem = null;
   shopElement.addEventListener('dragstart', function (evt) {
