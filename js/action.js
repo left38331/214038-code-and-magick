@@ -50,12 +50,12 @@
   var wizardEyes = document.querySelector('.wizard-eyes');
   var wizardFireball = document.querySelector('.setup-fireball-wrap');
   wizardCoat.addEventListener('click', function () {
-    wizardCoat.style.fill = window.isCreateHeroes.coatColor(window.isCreateHeroes.arrayColorCoat);
+    window.coloriseElement(wizardCoat, window.isCreateHeroes.arrayColorCoat, window.utils.fillElement);
   });
   wizardEyes.addEventListener('click', function () {
-    wizardEyes.style.fill = window.isCreateHeroes.eyeColor(window.isCreateHeroes.arrayColorEye);
+    window.coloriseElement(wizardEyes, window.isCreateHeroes.arrayColorEye, window.utils.fillElement);
   });
   wizardFireball.addEventListener('click', function () {
-    wizardFireball.style.background = window.isCreateHeroes.fireballColor(window.isCreateHeroes.arrayColorFireball);
+    window.coloriseElement(wizardFireball, window.isCreateHeroes.arrayColorFireball, window.utils.changeElementBackground);
   });
 })();
